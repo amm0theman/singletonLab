@@ -7,14 +7,14 @@ public class playByPlay {
 	   private playByPlay() {
 	      // Exists only to defeat instantiation.
 	   }
-	   public static playByPlay getInstance() {
+	   public static synchronized playByPlay getInstance() {
 	      if(instance == null) {
 	         instance = new playByPlay();
 	      }
 	      return instance;
 	   }
 	   
-	   public void sendPlay(String play) {
+	   public  synchronized void sendPlay(String play) {
 				   playByPlay.playByPlays += play;
 	   }
 	   
